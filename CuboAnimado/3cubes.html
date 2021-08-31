@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+		<script>
+            //Criação cena
+			var scene = new THREE.Scene();
+
+            //Criação da camera
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            
+            //Criação do renderizador
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            renderer.setClearColor({color : 0x000000});
+
+            //Definindo os objetos e suas formas
+
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+            var material = new THREE.MeshBasicMaterial({color : 0xffffff});
+            var cube1 = new THREE.Mesh(geometry, material);
+            scene.add(cube1);
+
+            //definindo posição do primeiro cubo
+            cube1.position.set(-3,0,0);
+
+            //Definindo o segundo cubo
+
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+            var material = new THREE.MeshBasicMaterial({color: 0x057C46});
+            var cube2 = new THREE.Mesh(geometry, material);
+            scene.add(cube2);
+
+             //definindo posição do segundo cubo
+            cube2.position.set(0, 0, 0);
+
+            //Definindo o terceiro cubo
+
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+            var material = new THREE.MeshBasicMaterial({color: 0x68AA94});
+            var cube3 = new THREE.Mesh(geometry, material);
+            scene.add(cube3);
+
+             //definindo posição do terceiro cubo
+            cube3.position.set(3, 0, 0);
+
+            camera.position.z = 5;
+            renderer.render(scene, camera);
+
+            //
+
+
+
+            
+
+
+		</script>
+	</body>
+</html>
